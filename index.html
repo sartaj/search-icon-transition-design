@@ -53,12 +53,12 @@
 
     }
 
-    .search:hover .line, input {
+    .active .line, .search:hover .line, input {
         font-size: 36px;
         color: white;
         position: relative;
     }
-    .search:hover .line {
+    .active .line, .search:hover .line {
         border-bottom: 0.3em solid white;
     }
 
@@ -71,35 +71,39 @@
         opacity: 0;
     }
 
-    .search:hover input, .search:active input {
+    ::-webkit-input-placeholder { /* WebKit browsers */
+        color: rgba(255,255,255,0.3);
+    }
+
+    .active input, .search:hover input, .search:active input {
         opacity: 1;
     }
 
-    .search:hover {
+    .active, .search:hover {
         background: rgb(0, 108, 207);
         padding: 20px;
         color: white;
         width: 660px;
     }
 
-    .search:hover .circle {
+    .active .circle, .search:hover .circle {
         width: 75%;
         border-radius: 25px;
         -webkit-transform: translate(0%,0%);
     }
 
-    .search:hover .line {
+    .active .line, .search:hover .line {
         width: 20%;
        -webkit-transform: rotate(0deg) translate(0px, 0px);
 
     }
 
     .search, .search * {
-        -webkit-transition: all 0.5s linear 0s;
+        -webkit-transition: all 0.3s linear 0s;
     }
 
-    .search:active .line {
-        box-shadow: 0 0 5px red;
+    .active .line, .search:active .line {
+/*        box-shadow: 0 0 5px red;*/
     }
 
     </style>
@@ -107,9 +111,9 @@
 
 <body>
     <nav>
-        <div class="search">
+        <div class="search" id="search">
             <div class="circle">
-                <input type="text" placeholder="Search" />
+                <input type="text" placeholder="Search" id="input" />
             </div>
 
             <div class="line">
@@ -118,6 +122,28 @@
         </div>
 
     </nav>
+
+
+    <script>
+        var input = document.getElementById("input"),
+            search = document.getElementById("search"),
+            origClass = search.className;
+
+        input.addEventListener('focus', function(){
+            search.className += ' active'
+        })
+
+        input.addEventListener('blur', function() {
+            search.className = origClass;
+        })
+
+    </script>
+
+    <br /><br /><br /><br />
+    <div style="font-size: 0.7em">
+    <p>Designed By Sartaj</p>
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/deed.en_US">Creative Commons Attribution 4.0 International License</a>.
+</div>
 </body>
 
 </html>
