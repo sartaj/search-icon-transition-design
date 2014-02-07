@@ -1,0 +1,123 @@
+<html>
+
+<head>
+    <style>
+    body {
+        font-family:"Helvetica Neue";
+        font-size: 20px;
+        color: black;
+    }
+    .search {
+
+        -webkit-transform: scale(1);
+
+        position: relative;
+        background: rgb(0, 108, 207);
+        border-radius: 20px;
+        padding: 20px;
+        margin: 20px;
+        color: white;
+        width: inherit;
+
+        width: 150px;
+        height: 150px;
+    }
+
+    .search, .circle {
+         display: -webkit-flexbox;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: flex;
+          -webkit-flex-align: center;
+          -ms-flex-align: center;
+          -webkit-align-items: center;
+          align-items: center;
+      }
+    .circle {
+        height: 50%;
+        width: 50%;
+        border-radius: 50px;
+        border: 0.5em solid white;
+       -webkit-transform: translate(0.5em,-1em);
+    }
+    .line {
+        width: 25%;
+
+        border-bottom: 0.5em solid white;
+        background: transparent;
+       -webkit-transform: rotate(50deg) translate(0.9em, 1.5em);
+        font-weight: bold;
+        padding: 0 11px;
+        color: rgba(255,255,255,0.0);
+        position: relative;
+
+    }
+
+    .search:hover .line, input {
+        font-size: 36px;
+        color: white;
+        position: relative;
+    }
+    .search:hover .line {
+        border-bottom: 0.3em solid white;
+    }
+
+    input {
+        background: transparent;
+        border: 0;
+        width: 100%;
+        outline: 0;
+        padding: 1em;
+        opacity: 0;
+    }
+
+    .search:hover input, .search:active input {
+        opacity: 1;
+    }
+
+    .search:hover {
+        background: rgb(0, 108, 207);
+        padding: 20px;
+        color: white;
+        width: 660px;
+    }
+
+    .search:hover .circle {
+        width: 75%;
+        border-radius: 25px;
+        -webkit-transform: translate(0%,0%);
+    }
+
+    .search:hover .line {
+        width: 20%;
+       -webkit-transform: rotate(0deg) translate(0px, 0px);
+
+    }
+
+    .search, .search * {
+        -webkit-transition: all 0.5s linear 0s;
+    }
+
+    .search:active .line {
+        box-shadow: 0 0 5px red;
+    }
+
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="search">
+            <div class="circle">
+                <input type="text" placeholder="Search" />
+            </div>
+
+            <div class="line">
+                Submit
+            </div>
+        </div>
+
+    </nav>
+</body>
+
+</html>
