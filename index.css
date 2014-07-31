@@ -1,8 +1,32 @@
 /** @define AniSearch; use strict  */
 
+/**
+ * Short description using Doxygen-style comment format
+ *
+ * The first sentence of the long description starts here and continues on this
+ * line for a while finally concluding here at the end of this paragraph.
+ *
+ * The long description is ideal for more detailed explanations and
+ * documentation. It can include example HTML, URLs, or any other information
+ * that is deemed necessary or useful.
+ *
+ * @tag This is a tag named 'tag'
+ *
+ * TODO: This is a todo statement that describes an atomic task to be completed
+ *   at a later date. It wraps after 80 characters and following lines are
+ *   indented by 2 spaces.
+ */
+
+/* Imports
+   ========================================================================== */
+
 /*@import "normalize.css";
 @import "suitcss-base";
 */
+
+
+/* Skin
+   ========================================================================== */
 
 /* Custom properties */
 /*:root {
@@ -10,17 +34,23 @@
 }
 */
 
-.AniSearch {}
-.AniSearch {}
-.AniSearch.is-animating {}
+/*.aniSearch--animations, .aniSearch--animations *{
+    -webkit-transition: transform 0.3s linear 0s;
+    -moz-transition: transform 0.3s linear 0s;
+    -o-transition: transform 0.3s linear 0s;
+    -ms-transition: transform 0.3s linear 0s;
+    transition: transform 0.3s linear 0s;
+}
+*/
+/* Structure
+   ========================================================================== */
 
-.AniSearch--skin {
-    font-family:"Helvetica Neue";
-    background: rgb(0, 108, 207);
-    color: white;
+
+* {
+  -webkit-box-style: border-box;
 }
 
-.aniSearch--structure, .aniSearch--inputContainer {
+.aniSearch--structure {
 
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
@@ -29,15 +59,12 @@
     transform: scale(1);
 
     position: relative;
-    border-radius: 20px;
     padding: 20px;
     width: inherit;
     width: 150px;
     height: 150px;
 
-}
 
-.aniSearch--center {
     display: -webkit-flexbox;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -51,17 +78,102 @@
     justify-content: center;
     -webkit-justify-content: center;
     -ms-justify-content: center;
+
+    /*border-radius: 20px;*/
+
 }
 
+    .aniSearch--structure:hover {
+        width: 660px;
+    }
+
+/* Circle
+   ========================================================================== */
+
 .AniSearch--circle {
+/*  background: red;
     height: 50%;
-    width: 50%;
     border-radius: 50px;
     border: 0.7rem solid white;
-    padding: 1.5rem!important;
-/*    -webkit-transform: translate(0rem,0rem);
-    transform: translate(0rem,0rem);*/
+    padding: 1.5rem;
+*/
+    width: 0%;
+    -webkit-transform: translate(0rem,0rem);
+    transform: translate(0rem,0rem);
+
+    border-bottom-width: 0.3rem;
+    border-bottom-style: solid;
+    border-top-width: 0.3rem;
+    border-top-style: solid;
+
 }
+
+input {
+  outline: 0;
+  padding: 1.5rem;
+  margin: 0;
+  border: 0;
+
+  background:transparent;
+  width: 100%;
+  display:block;
+}
+
+.aniSearch--circle:before,
+.aniSearch--circle:after,
+.aniSearch--circle  input {
+    height: 3rem;
+}
+
+
+.AniSearch--circle:before,
+.AniSearch--circle:after {
+  content: "\00a0";
+  background: transparent;
+  width: 3rem;
+  display: block;
+  position: absolute;
+  border-radius: 4rem;
+  top: 0;
+  border-style: solid;
+  border-width: 0.3rem;  
+}
+
+.AniSearch--circle:before {
+  left: -1.6rem;
+  clip: rect(0,1.7rem,4rem,0);
+}
+
+.AniSearch--circle:after {
+  right: -1.5rem;
+  clip: rect(0,4rem,4rem,1.5rem);
+}
+
+    .AniSearch-circle::-webkit-input-placeholder {
+        color: transparent;
+    }
+
+    .AniSearch--container input:hover::-webkit-input-placeholder,
+    .AniSearch--container input:focus::-webkit-input-placeholder { /* WebKit browsers */
+        color: rgba(255,255,255,1.0);
+    }
+
+    input.aniSearch--circle:hover , input:focus  {
+        color: white;
+    }
+
+    .aniSearch--circle:active, .aniSearch--structure:hover .aniSearch--circle {
+          width: 50%;
+
+/*        -webkit-transform: translate(0%,0%);
+        -moz-transform: translate(0%,0%);
+        -o-transform: translate(0%,0%);
+        -ms-transform: translate(0%,0%);
+        transform: translate(0%,0%);*/
+    }
+
+/* Line
+   ========================================================================== */
 
     .AniSearch--line {
         width: 25%;
@@ -79,50 +191,10 @@
 
     }
 
-    .active .AniSearch--line, .aniSearch--structure:hover .AniSearch--line, input {
-        font-size: 36px;
-        color: white;
-        position: relative;
-    }
     .active .AniSearch--line, .aniSearch--structure:hover .AniSearch--line {
         border-bottom: 0.3em solid white;
     }
 
-    .AniSearch input {
-        outline: 0;
-        padding: 0 1rem;
-        color: transparent;
-        background: transparent;
-    }
-    .AniSearch input::-webkit-input-placeholder {
-        color: transparent;
-    }
-
-    .AniSearch--container input:hover::-webkit-input-placeholder,
-    .AniSearch--container input:focus::-webkit-input-placeholder { /* WebKit browsers */
-        color: rgba(255,255,255,1.0);
-    }
-
-    input.aniSearch--circle:hover , input:focus  {
-        color: white;
-    }
-
-    .aniSearch--structure:hover {
-        background: rgb(0, 108, 207);
-        padding: 20px;
-        color: white;
-        width: 660px;
-    }
-
-    .aniSearch--circle:active, .aniSearch--structure:hover .aniSearch--circle {
-        width: 75%;
-        border-radius: 25px;
-        -webkit-transform: translate(0%,0%);
-        -moz-transform: translate(0%,0%);
-        -o-transform: translate(0%,0%);
-        -ms-transform: translate(0%,0%);
-        transform: translate(0%,0%);
-    }
 
     .active .AniSearch--line, .aniSearch--structure:hover .AniSearch--line {
         width: 20%;
@@ -134,13 +206,26 @@
 
     }
 
-    .aniSearch--animations, .aniSearch--animations * {
-        -webkit-transition: all 0.3s linear 0s;
-        -moz-transition: all 0.3s linear 0s;
-        -o-transition: all 0.3s linear 0s;
-        -ms-transition: all 0.3s linear 0s;
-        transition: all 0.3s linear 0s;
-    }
+/* ==========================================================================
+   User Input
+   ========================================================================== */
+
+
+.AniSearch--border {
+  border-color: red;
+}
+
+.AniSearch--skin {
+  background: rgb(0, 108, 207);
+}
+
+/* Typography */
+.AniSearch--skin,
+.AniSearch--skin input {
+  color: white;
+  font-size: 36px;
+  font-family:"Helvetica Neue";
+}
 
 
 /* ==========================================================================
