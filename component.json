@@ -1,0 +1,13 @@
+{
+name: "anisearch",
+repo: "suitcss/anisearch",
+version: "1.0.0",
+styles: [
+"index.css"
+],
+dependencies: { },
+development: {
+suitcss/components-test: "0.1.1"
+},
+license: "MIT"
+}

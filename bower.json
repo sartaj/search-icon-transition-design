@@ -1,0 +1,16 @@
+{
+  "name": "suit-anisearch",
+  "description": "",
+  "version": "0.0.0",
+  "main": "anisearch.css",
+  "ignore": [
+    "build",
+    "components",
+    "test",
+    ".*",
+    "CHANGELOG.md",
+    "component.json",
+    "package.json",
+    "test.html"
+  ]
+}
