@@ -10,72 +10,60 @@
 }
 */
 
-    .AniSearch {}
-.MyComponent {}
-.MyComponent.is-animating {}
-.MyComponent--modifier {}
+.AniSearch {}
+.AniSearch {}
+.AniSearch.is-animating {}
 
+.AniSearch--skin {
+    font-family:"Helvetica Neue";
+    background: rgb(0, 108, 207);
+    color: white;
+}
 
-    body {
-        font-family:"Helvetica Neue";
-        font-size: 20px;
-        color: white;
-        height: 100%;
-        max-height: 95%; /* Border Box fix */
+.aniSearch--structure, .aniSearch--inputContainer {
 
-    }
-    a {
-        color: white;
-    }
-    .search, body {
-        background: rgb(0, 108, 207);
-    }
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
 
-    .search {
+    position: relative;
+    border-radius: 20px;
+    padding: 20px;
+    width: inherit;
+    width: 150px;
+    height: 150px;
 
-        -webkit-transform: scale(1);
-        -moz-transform: scale(1);
-        -o-transform: scale(1);
-        -ms-transform: scale(1);
-        transform: scale(1);
+}
 
-        position: relative;
-        border-radius: 20px;
-        padding: 20px;
-        color: white;
-        width: inherit;
-        width: 150px;
-        height: 150px;
-    }
+.aniSearch--center {
+    display: -webkit-flexbox;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
 
-    .search, .circle, nav, body {
-          
-          display: -webkit-flexbox;
-          display: -ms-flexbox;
-          display: -webkit-flex;
-          display: -moz-flex;
-          display: flex;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
 
-          -ms-flex-align: center;
-          -webkit-align-items: center;
-          align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    -ms-justify-content: center;
+}
 
-          justify-content: center;
-          -webkit-justify-content: center;
-          -ms-justify-content: center;
-      }
-    .circle {
-        height: 50%;
-        width: 50%;
-        border-radius: 50px;
-        border: 0.5em solid white;
-        -webkit-transform: translate(0.5em,-1em);
-        -moz-transform: translate(0.5em,-1em);
-        -o-transform: translate(0.5em,-1em);
-        -ms-transform: translate(0.5em,-1em);
-        transform: translate(0.5em,-1em);
-    }
-    .line {
+.AniSearch--circle {
+    height: 50%;
+    width: 50%;
+    border-radius: 50px;
+    border: 0.7rem solid white;
+    padding: 1.5rem!important;
+/*    -webkit-transform: translate(0rem,0rem);
+    transform: translate(0rem,0rem);*/
+}
+
+    .AniSearch--line {
         width: 25%;
         border-bottom: 0.5em solid white;
         background: transparent;
@@ -91,40 +79,42 @@
 
     }
 
-    .active .line, .search:hover .line, input {
+    .active .AniSearch--line, .aniSearch--structure:hover .AniSearch--line, input {
         font-size: 36px;
         color: white;
         position: relative;
     }
-    .active .line, .search:hover .line {
+    .active .AniSearch--line, .aniSearch--structure:hover .AniSearch--line {
         border-bottom: 0.3em solid white;
     }
 
-    input {
-        background: transparent;
-        border: 0;
-        width: 100%;
+    .AniSearch input {
         outline: 0;
-        padding: 1em;
-        opacity: 0;
+        padding: 0 1rem;
+        color: transparent;
+        background: transparent;
+    }
+    .AniSearch input::-webkit-input-placeholder {
+        color: transparent;
     }
 
-    ::-webkit-input-placeholder { /* WebKit browsers */
-        color: rgba(255,255,255,0.3);
+    .AniSearch--container input:hover::-webkit-input-placeholder,
+    .AniSearch--container input:focus::-webkit-input-placeholder { /* WebKit browsers */
+        color: rgba(255,255,255,1.0);
     }
 
-    .active input, .search:hover input, .search:active input {
-        opacity: 1;
+    input.aniSearch--circle:hover , input:focus  {
+        color: white;
     }
 
-    .active, .search:hover {
+    .aniSearch--structure:hover {
         background: rgb(0, 108, 207);
         padding: 20px;
         color: white;
         width: 660px;
     }
 
-    .active .circle, .search:hover .circle {
+    .aniSearch--circle:active, .aniSearch--structure:hover .aniSearch--circle {
         width: 75%;
         border-radius: 25px;
         -webkit-transform: translate(0%,0%);
@@ -134,7 +124,7 @@
         transform: translate(0%,0%);
     }
 
-    .active .line, .search:hover .line {
+    .active .AniSearch--line, .aniSearch--structure:hover .AniSearch--line {
         width: 20%;
         -webkit-transform: rotate(0deg) translate(0px, 0px);
         -moz-transform: rotate(0deg) translate(0px, 0px);
@@ -144,7 +134,7 @@
 
     }
 
-    .search, .search * {
+    .aniSearch--animations, .aniSearch--animations * {
         -webkit-transition: all 0.3s linear 0s;
         -moz-transition: all 0.3s linear 0s;
         -o-transition: all 0.3s linear 0s;
@@ -152,6 +142,54 @@
         transition: all 0.3s linear 0s;
     }
 
-    .active .line, .search:active .line {
-/*        box-shadow: 0 0 5px red;*/
+
+/* ==========================================================================
+   Demo
+   ========================================================================== */
+
+    body {
+        height: 100%;
+        max-height: 95%; /* Border Box fix */
+        font-size: 20px;
+        color: white;
     }
+
+    a {
+        color: white;
+    }
+
+
+      nav, body {
+          
+          display: -webkit-flexbox;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: -moz-flex;
+          display: flex;
+
+          -ms-flex-align: center;
+          -webkit-align-items: center;
+          align-items: center;
+
+          justify-content: center;
+          -webkit-justify-content: center;
+          -ms-justify-content: center;
+      }
+
+
+
+/*    .active .AniSearch--line, .aniSearch--structure:active .AniSearch--line {
+        box-shadow: 0 0 5px red;
+    }
+*/
+/* ==========================================================================
+   Debug/
+   ========================================================================== */
+
+.debug .placeh:focus {
+    background: red!important;
+}
+
+.debug .placeh {
+    border: 2px solid pink!important;
+}

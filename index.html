@@ -4,33 +4,31 @@
       <link href="index.css" media="all" rel="stylesheet" type="text/css" />
 </head>
 
-<body>
-    <nav>
-        <div class="search" id="search">
-            <div class="circle">
-                <input type="text" placeholder="Search" id="input" />
-            </div>
+<body class="debug" >
+    <nav id="search" >
+        <div class="AniSearch AniSearch--structure AniSearch--skin AniSearch--animations AniSearch--center">
+            <input type="text" placeholder="Search" class="AniSearch--center AniSearch--circle" />
 
-            <div class="line">
+<!--             <div class="AniSearch--line">
                 Submit
-            </div>
+            </div> -->
         </div>
 
     </nav>
 
 
     <script>
-        var input = document.getElementById("input"),
-            search = document.getElementById("search"),
-            origClass = search.className;
+        // var input = document.getElementById("input"),
+        //     search = document.getElementById("search"),
+        //     origClass = search.className;
 
-        input.addEventListener('focus', function(){
-            search.className += ' active'
-        })
+        // input.addEventListener('focus', function(){
+        //     search.className += ' active'
+        // })
 
-        input.addEventListener('blur', function() {
-            search.className = origClass;
-        })
+        // input.addEventListener('blur', function() {
+        //     search.className = origClass;
+        // })
 
     </script>
 
