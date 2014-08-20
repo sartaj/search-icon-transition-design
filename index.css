@@ -46,11 +46,15 @@
    ========================================================================== */
 
 
-* {
-  -webkit-box-style: border-box;
+*,
+:before,
+:after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
-.aniSearch--structure {
+.AniSearch--structure {
 
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
@@ -59,10 +63,7 @@
     transform: scale(1);
 
     position: relative;
-    padding: 20px;
-    width: inherit;
-    width: 150px;
-    height: 150px;
+/*    padding: 20px;*/
 
 
     display: -webkit-flexbox;
@@ -83,10 +84,6 @@
 
 }
 
-    .aniSearch--structure:hover {
-        width: 660px;
-    }
-
 /* Circle
    ========================================================================== */
 
@@ -97,14 +94,19 @@
     border: 0.7rem solid white;
     padding: 1.5rem;
 */
-    width: 0%;
+    width: 73%;
+    height:73%;
     -webkit-transform: translate(0rem,0rem);
     transform: translate(0rem,0rem);
 
-    border-bottom-width: 0.3rem;
     border-bottom-style: solid;
-    border-top-width: 0.3rem;
+    border-left-style: none;
+    border-right-style: none;
     border-top-style: solid;
+
+    position: absolute;
+    top:0;
+    left:0;
 
 }
 
@@ -119,27 +121,22 @@ input {
   display:block;
 }
 
-.aniSearch--circle:before,
-.aniSearch--circle:after,
-.aniSearch--circle  input {
-    height: 3rem;
-}
+
 
 
 .AniSearch--circle:before,
 .AniSearch--circle:after {
   content: "\00a0";
   background: transparent;
-  width: 3rem;
+  height:100%;
+  width: 100%;
   display: block;
   position: absolute;
-  border-radius: 4rem;
+  border-radius: 100%;
   top: 0;
-  border-style: solid;
-  border-width: 0.3rem;  
 }
 
-.AniSearch--circle:before {
+/*.AniSearch--circle:before {
   left: -1.6rem;
   clip: rect(0,1.7rem,4rem,0);
 }
@@ -147,7 +144,7 @@ input {
 .AniSearch--circle:after {
   right: -1.5rem;
   clip: rect(0,4rem,4rem,1.5rem);
-}
+}*/
 
     .AniSearch-circle::-webkit-input-placeholder {
         color: transparent;
@@ -163,7 +160,7 @@ input {
     }
 
     .aniSearch--circle:active, .aniSearch--structure:hover .aniSearch--circle {
-          width: 50%;
+          /*width: 100%;*/
 
 /*        -webkit-transform: translate(0%,0%);
         -moz-transform: translate(0%,0%);
@@ -176,19 +173,16 @@ input {
    ========================================================================== */
 
     .AniSearch--line {
-        width: 25%;
-        border-bottom: 0.5em solid white;
+        width: 57%;
+        border-bottom: 0.3rem solid white;
         background: transparent;
-        -webkit-transform: rotate(50deg) translate(0.9em, 1.5em);
-        -moz-transform: rotate(50deg) translate(0.9em, 1.5em);
-        -o-transform: rotate(50deg) translate(0.9em, 1.5em);
-        -ms-transform: rotate(50deg) translate(0.9em, 1.5em);
-        transform: rotate(50deg) translate(0.9em, 1.5em);
+        -webkit-transform: rotate(45deg);
+        -webkit-transform-origin: 100% 100%;
         font-weight: bold;
-        padding: 0 11px;
         color: rgba(255,255,255,0.0);
-        position: relative;
-
+        position: absolute;
+        bottom:0;
+        right:0;
     }
 
     .active .AniSearch--line, .aniSearch--structure:hover .AniSearch--line {
@@ -211,22 +205,30 @@ input {
    ========================================================================== */
 
 
-.AniSearch--border {
-  border-color: red;
-}
+  .AniSearch--border,
+  .AniSearch--border:after,
+  .AniSearch--border:after {
+    border-color: red;
+    border-width: 0.3rem;
+    border-style: solid;
+  }
 
-.AniSearch--skin {
-  background: rgb(0, 108, 207);
-}
+  .AniSearch--skin {
+    background: rgb(0, 108, 207);
+  }
 
-/* Typography */
-.AniSearch--skin,
-.AniSearch--skin input {
-  color: white;
-  font-size: 36px;
-  font-family:"Helvetica Neue";
-}
+  /* Typography */
+  .AniSearch--skin,
+  .AniSearch--skin input {
+    color: white;
+    font-size: 36px;
+    font-family:"Helvetica Neue";
+  }
 
+  .AniSearch--structure {
+    width: 200px;
+    height: 200px;
+  }
 
 /* ==========================================================================
    Demo
